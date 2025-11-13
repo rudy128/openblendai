@@ -1,0 +1,69 @@
+{
+  "title": "How can we be of service to you?",
+  "primaryService": {
+    "title": "Development of web3 app and services",
+    "description": "Listing and market making for crypto projects"
+  },
+  "services": [
+    {
+      "id": 1,
+      "badge": {
+        "text": "🔥 HOT",
+        "type": "hot"
+      },
+      "title": "Tokens and cryptocurrencies development",
+      "icon": "crypto",
+      "linkText": "Learn More"
+    },
+    {
+      "id": 2,
+      "badge": {
+        "text": "🔥 HOT",
+        "type": "hot"
+      },
+      "title": "Telegram Mini Apps development",
+      "icon": "mobile",
+      "linkText": "Learn More"
+    },
+    {
+      "id": 3,
+      "badge": {
+        "text": "✨ NEW",
+        "type": "new"
+      },
+      "title": "Development of crypto wallets",
+      "icon": "wallet",
+      "linkText": "Learn More"
+    },
+    {
+      "id": 4,
+      "badge": {
+        "text": "🔥 HOT",
+        "type": "hot"
+      },
+      "title": "Development of cryptocurrency exchanges, exchangers, P2P platforms",
+      "icon": "exchange",
+      "linkText": "Learn More"
+    },
+    {
+      "id": 5,
+      "badge": {
+        "text": "🔥 HOT",
+        "type": "hot"
+      },
+      "title": "Development of electronic payment systems",
+      "icon": "payment",
+      "linkText": "Learn More"
+    },
+    {
+      "id": 6,
+      "badge": {
+        "text": "✨ NEW",
+        "type": "new"
+      },
+      "title": "Development and audit of smart contracts",
+      "icon": "contract",
+      "linkText": "Learn More"
+    }
+  ]
+}
