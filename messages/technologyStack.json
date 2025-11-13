@@ -1,0 +1,118 @@
+{
+  "technologyStack": {
+    "title": "Technology Stack",
+    "subtitle": "We use the latest advanced technologies, pumping our expertise daily",
+    "sections": {
+      "blockchain": {
+        "title": "Blockchain",
+        "tags": [
+          { "name": "Tokens", "icon": "fas fa-coins" },
+          { "name": "Exchanges", "icon": "fas fa-exchange-alt" },
+          { "name": "NFT", "icon": "fas fa-image" },
+          { "name": "Launchpads", "icon": "fas fa-rocket" },
+          { "name": "Metaverse", "icon": "fas fa-cube" },
+          { "name": "ICO", "icon": "fas fa-bullhorn" },
+          { "name": "DeFi", "icon": "fas fa-project-diagram" },
+          { "name": "Portfolio", "icon": "fas fa-chart-line" }
+        ]
+      },
+      "tools": {
+        "title": "Tools",
+        "technologies": [
+          { "name": "Web3.js", "icon": "/tech-stack-icons/3xjv7vv97miu2dk97pt5ro2157cbcckm.svg" },
+          { "name": "Ethers.js", "icon": "/tech-stack-icons/yidljr4edqsggh1xesnwg8267462s225.svg" },
+          { "name": "Hardhat", "icon": "/tech-stack-icons/j435ylvym5757c029lqpz870ews6lbii.svg" },
+          { "name": "Node.js", "icon": "/tech-stack-icons/9mvxtwyrkmjuil61l1001on5kkf8hshb.svg" },
+          { "name": "CHIA", "icon": "/tech-stack-icons/8fqg66ivyb34jyjdx243qaxeglzif2db.svg" },
+          { "name": "Tonweb.js", "icon": "/tech-stack-icons/13fzpw0kmxow1041ryn1wvol1yy31oyf.svg" },
+          { "name": "MOCHA", "icon": "/tech-stack-icons/h9j35b7dpluf1jpsjm2hi560pvgay323.svg" },
+          { "name": "Truffle", "icon": "/tech-stack-icons/s14x7oact1eutrnudbyep9gpl9nwduxa.svg" }
+        ]
+      },
+      "services": {
+        "title": "Services",
+        "technologies": [
+          { "name": "Web3auth", "icon": "/tech-stack-icons/a9stg26r2te2k2ax10097dw8p44od8ug.svg" },
+          { "name": "OpenSea", "icon": "/tech-stack-icons/o81xnfueq7hgbw4r1aqg87fuxfsdn6uz.svg" },
+          { "name": "CoinGecko", "icon": "/tech-stack-icons/dlua6c78xicicskhrbju08tqbju3lhwk.svg" },
+          { "name": "Moralis", "icon": "/tech-stack-icons/eyfpy81sxbn7tfx0qvxm55ra2fx1y0tc.svg" },
+          { "name": "MetaMask", "icon": "/tech-stack-icons/bytgnsxjnz20nfp7dv7kfpsopgsi472t.svg" },
+          { "name": "Infura", "icon": "/tech-stack-icons/kw423dd6mi291klht0wkp606lz9l05bc.svg" },
+          { "name": "Alchemy", "icon": "/tech-stack-icons/8j16enrckzdeagbbieeo9cccpzynxwka.svg" },
+          { "name": "WalletConnect", "icon": "/tech-stack-icons/qc3htq2aouuxlz2b6f2yadqr963p7u2g.svg" }
+        ]
+      },
+      "chains": {
+        "title": "Chains",
+        "technologies": [
+          { "name": "BTC", "icon": "/tech-stack-icons/elvv7y3nl3y76eb9hspxdyb2zqc1gpb0.svg" },
+          { "name": "ETH", "icon": "/tech-stack-icons/za2rmwblp2dcfrikwv9klpzy570hp7mu.svg" },
+          { "name": "POLY", "icon": "/tech-stack-icons/66fd5qvbo9qqzalv7osm2lhbf4slzw2a.svg" },
+          { "name": "SOL", "icon": "/tech-stack-icons/qfeht5hgobm5ud0tsb9tl1hgbk4iw81c.svg" },
+          { "name": "BSC", "icon": "/tech-stack-icons/d77m8dv7oxyb5dj10ennkgtuin4yt2er.svg" },
+          { "name": "TON", "icon": "/tech-stack-icons/7n4eoxsxjguvt3dulpiyoqxb5rswktik.svg" }
+        ]
+      },
+      "web": {
+        "title": "Web",
+        "technologies": [
+          { "name": "TypeScript", "icon": "/tech-stack-icons/j8crlm8eo9p2er80lr6fjhizbskkskz1.svg" },
+          { "name": "React", "icon": "/tech-stack-icons/1ibxiiprgx1wxu1ukztmkwahopzw073d.svg" },
+          { "name": "JavaScript", "icon": "/tech-stack-icons/w31e0p0483z9w5qn06074kbc2yz83p29.svg" },
+          { "name": "NextJS", "icon": "/tech-stack-icons/wlrdoyf7pcemqayu4nb5ebv86ve7i80h.svg" },
+          { "name": "Redux", "icon": "/tech-stack-icons/cte43qul7qepgwaqi0glzcw3tmwou9y8.svg" },
+          { "name": "Vue", "icon": "/tech-stack-icons/ts62m1umgtxvch98bx67qixvo5tivvb5.svg" },
+          { "name": "Nuxt", "icon": "/tech-stack-icons/bodsrtc7x6eillog869hawwqx9hvo08a.svg" },
+          { "name": "PHP", "icon": "/tech-stack-icons/s2vmz5066fvaxt78mryd6owpf6vctune.svg" },
+          { "name": "Python", "icon": "/tech-stack-icons/d80mltmdb21893n1sejhp46htgjz0x2y.svg" },
+          { "name": "C#", "icon": "/tech-stack-icons/df7w3kgyu3ofzp2gdfxe7ti89j6fps7k.svg" },
+          { "name": "Laravel", "icon": "/tech-stack-icons/lhdkcril3p83hoezpb9xdu52b9fd941d.svg" },
+          { "name": "Solidity", "icon": "/tech-stack-icons/kyapwmgkt8cujdydk5z2ml7vjrsifpj2.svg" },
+          { "name": "Django", "icon": "/tech-stack-icons/2okrrhrnbngfltpxyn9fz959mlev48xi.svg" },
+          { "name": "GO", "icon": "/tech-stack-icons/7pw35hkc3li09ylu1poyj3d09bog1uj4.svg" }
+        ]
+      },
+      "mobile": {
+        "title": "Mobile development",
+        "technologies": [
+          { "name": "React Native", "icon": "/tech-stack-icons/jo6mxc4d06dejdzfvp9l6sed542bgriy.svg" },
+          { "name": "Flutter", "icon": "/tech-stack-icons/jo6mxc4d06dejdzfvp9l6sed542bgriy.svg" }
+        ]
+      },
+      "devops": {
+        "title": "DevOps",
+        "technologies": [
+          { "name": "NodeJS", "icon": "/tech-stack-icons/zd50fgqormc497zagw9glj0ctvbnhjjb.svg" },
+          { "name": "ExpressJS", "icon": "/tech-stack-icons/icq5bvl40pv6ie31a0dj0x4hv5ur1tfn.svg" },
+          { "name": "GraphQL", "icon": "/tech-stack-icons/evl36l46g265zmsz532xlkdw0j6j6mzs.svg" },
+          { "name": "Apollo", "icon": "/tech-stack-icons/z5f7jh6lsd3q0xid9y2waudkq7m2ythz.svg" },
+          { "name": "REST API", "icon": "/tech-stack-icons/1huleh1sutt7jnefcddmy1706ciumqbp.svg" },
+          { "name": "Docker", "icon": "/tech-stack-icons/ow3nvbweq9r7tdrnhgwgtxcxvncjxtug.svg" },
+          { "name": "RabbitMQ", "icon": "/tech-stack-icons/m7ev8v4z530alss6n7fe38i1ru1plivr.svg" },
+          { "name": "Celery", "icon": "/tech-stack-icons/c3n8q4ya8n71lfjnq929o23embe7k903.svg" }
+        ]
+      },
+      "database": {
+        "title": "Database",
+        "technologies": [
+          { "name": "PostgreSQL", "icon": "/tech-stack-icons/ytji76yf21lpf3scioti5yaw7r54wmsg.svg" },
+          { "name": "MySQL", "icon": "/tech-stack-icons/vxeq0xqgpy1utosd1xukistde9zvfld4.svg" },
+          { "name": "SQLite", "icon": "/tech-stack-icons/qt87rzi5qt5klhj20zsu4i6iz29wu10s.svg" },
+          { "name": "MongoDB", "icon": "/tech-stack-icons/1urzoxnfryph55yqkan3lntbe2i26wmz.svg" },
+          { "name": "Redis", "icon": "/tech-stack-icons/aj01hhgkyjhqvlpfimrazlnuh2eo2eq0.svg" }
+        ]
+      },
+      "cloud": {
+        "title": "Cloud technologies",
+        "technologies": [
+          { "name": "AWS", "icon": "/tech-stack-icons/dgi331djkqaqt5wi4l2vzlpxyoxbl7l1.svg" },
+          { "name": "Azure", "icon": "/tech-stack-icons/qimrzjzm4rukdsz5grabe8grgac9132q.svg" },
+          { "name": "Firebase", "icon": "/tech-stack-icons/m6moqx5qnm76p4rm4h4lv3husv4635op.svg" },
+          { "name": "Google Cloud", "icon": "/tech-stack-icons/cgycjh32ljanjoataqwmlrl2hzde2jxn.svg" },
+          { "name": "Heroku", "icon": "/tech-stack-icons/52kuwrhfzi6z8ip1h437wfq4hahqk312.svg" },
+          { "name": "GoDaddy", "icon": "/tech-stack-icons/ojvqarw6odbd3sxz8gddyu15ctulzmbk.svg" }
+        ]
+      }
+    }
+  }
+}
