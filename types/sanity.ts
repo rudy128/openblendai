@@ -59,3 +59,37 @@ export interface Blog {
   publishedAt: string;
   featured?: boolean;
 }
+
+export interface Service {
+  _id: string;
+  _type: 'service';
+  title: string;
+  description?: string;
+  icon?: string;
+  priceString?: string;
+  durationString?: string;
+  hasTag?: boolean;
+  tagText?: string;
+  order?: number;
+}
+
+export interface Testimonial {
+  _id: string;
+  _type: 'testimonial';
+  name: string;
+  title: string;
+  avatar?: SanityImage;
+  companyLogo?: SanityImage;
+  quote: string;
+  order?: number;
+  featured?: boolean;
+}
+
+export interface TechIcon {
+  _id: string;
+  _type: 'techIcon';
+  name: string;
+  icon: SanityImage;
+  category: string;
+  order?: number;
+}

@@ -1,9 +1,75 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
 
 const ContactFormSection = () => {
   const t = useTranslations('contact');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    project: '',
+    privacy: false,
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value, type } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: 'success',
+          message: 'Thank you! Your message has been sent successfully.',
+        });
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          project: '',
+          privacy: false,
+        });
+      } else {
+        setSubmitStatus({
+          type: 'error',
+          message: data.error || 'Failed to send message. Please try again.',
+        });
+      }
+    } catch (err) {
+      console.error('Contact form submission error:', err);
+      setSubmitStatus({
+        type: 'error',
+        message: 'An error occurred. Please try again later.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="contact" className="w-full py-20">
@@ -14,13 +80,28 @@ const ContactFormSection = () => {
           <div className="lg:w-1/2 w-full space-y-8">
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">{t('title')}</h2>
             
-            <form className="space-y-6">
+            {/* Status Messages */}
+            {submitStatus.type && (
+              <div
+                className={`p-4 rounded-lg ${
+                  submitStatus.type === 'success'
+                    ? 'bg-green-50 text-green-800 border border-green-200'
+                    : 'bg-red-50 text-red-800 border border-red-200'
+                }`}
+              >
+                {submitStatus.message}
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name */}
               <div>
                 <label htmlFor="name" className="block text-lg font-medium text-gray-600 mb-2">{t('name')} *</label>
                 <input 
                   type="text" 
-                  id="name" 
+                  id="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   required 
                   className="w-full bg-transparent border-b border-gray-300 text-gray-900 focus:border-[#4f46e5] focus:ring-0 p-2 outline-none placeholder-gray-500" 
                   placeholder={t('placeholders.name')}
@@ -33,7 +114,9 @@ const ContactFormSection = () => {
                   <label htmlFor="email" className="block text-lg font-medium text-gray-600 mb-2">{t('email')} *</label>
                   <input 
                     type="email" 
-                    id="email" 
+                    id="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     required 
                     className="w-full bg-transparent border-b border-gray-300 text-gray-900 focus:border-[#4f46e5] focus:ring-0 p-2 outline-none placeholder-gray-500" 
                     placeholder={t('placeholders.email')}
@@ -43,7 +126,9 @@ const ContactFormSection = () => {
                   <label htmlFor="phone" className="block text-lg font-medium text-gray-600 mb-2">{t('phone')}</label>
                   <input 
                     type="tel" 
-                    id="phone" 
+                    id="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
                     className="w-full bg-transparent border-b border-gray-300 text-gray-900 focus:border-[#4f46e5] focus:ring-0 p-2 outline-none placeholder-gray-500" 
                     placeholder={t('placeholders.phone')}
                   />
@@ -54,7 +139,9 @@ const ContactFormSection = () => {
               <div>
                 <label htmlFor="project" className="block text-lg font-medium text-gray-600 mb-2">{t('project')} *</label>
                 <textarea 
-                  id="project" 
+                  id="project"
+                  value={formData.project}
+                  onChange={handleChange}
                   rows={3} 
                   required 
                   className="w-full bg-transparent border-b border-gray-300 text-gray-900 focus:border-[#4f46e5] focus:ring-0 p-2 outline-none resize-none placeholder-gray-500" 
@@ -67,7 +154,9 @@ const ContactFormSection = () => {
                 <div className="flex items-center mb-4 sm:mb-0">
                   <input 
                     type="checkbox" 
-                    id="privacy" 
+                    id="privacy"
+                    checked={formData.privacy}
+                    onChange={handleChange}
                     className="w-4 h-4 text-[#4f46e5] bg-transparent border-gray-300 rounded focus:ring-[#4f46e5] focus:ring-2"
                   />
                   <label htmlFor="privacy" className="ml-2 text-sm text-gray-600">
@@ -75,10 +164,11 @@ const ContactFormSection = () => {
                   </label>
                 </div>
                 <button 
-                  type="submit" 
-                  className="bg-[#5c6674] text-white font-semibold py-3 px-12 rounded-xl transition duration-150 hover:bg-[#6f7c8f]"
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="bg-[#5c6674] text-white font-semibold py-3 px-12 rounded-xl transition duration-150 hover:bg-[#6f7c8f] disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {t('send')}
+                  {isSubmitting ? 'Sending...' : t('send')}
                 </button>
               </div>
             </form>

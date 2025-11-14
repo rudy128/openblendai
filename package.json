@@ -16,7 +16,8 @@
     "next-intl": "^4.5.2",
     "next-sanity": "^11.6.6",
     "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react-dom": "19.2.0",
+    "resend": "^6.4.2"
   },
   "devDependencies": {
     "@sanity/vision": "^4.15.0",

@@ -105,3 +105,45 @@ export const BLOG_BY_SLUG_QUERY = `*[_type == "blog" && slug.current == $slug][0
   tags,
   publishedAt
 }`;
+
+// Services queries
+export const SERVICES_QUERY = `*[_type == "service"] | order(order asc) {
+  _id,
+  title,
+  description,
+  icon,
+  priceString,
+  durationString,
+  hasTag,
+  tagText,
+  order
+}`;
+
+// Testimonials queries
+export const TESTIMONIALS_QUERY = `*[_type == "testimonial"] | order(order asc) {
+  _id,
+  name,
+  title,
+  avatar,
+  companyLogo,
+  quote,
+  order
+}`;
+
+// Tech Icons queries
+export const TECH_ICONS_QUERY = `*[_type == "techIcon"] | order(order asc) {
+  _id,
+  name,
+  icon,
+  category,
+  order
+}`;
+
+// Get tech icons by category
+export const TECH_ICONS_BY_CATEGORY_QUERY = `*[_type == "techIcon" && category == $category] | order(order asc) {
+  _id,
+  name,
+  icon,
+  category,
+  order
+}`;
