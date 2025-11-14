@@ -5,7 +5,7 @@ const withNextIntl = createNextIntlPlugin('./i18n.ts');
 const nextConfig = {
   /* config options here */
   images: {
-    domains: ['axiomica.io'],
+    domains: ['cdn.sanity.io'],
   }
 };
 
