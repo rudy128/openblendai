@@ -7,6 +7,7 @@ import { urlFor } from '@/lib/sanity';
 import ServiceRow from '@/app/components/ServiceRow';
 import TestimonialCard from '@/app/components/TestimonialCard';
 import { useState } from 'react';
+import { useTranslations, useLocale } from 'next-intl';
 import technologyStackData from '@/messages/technologyStack.json';
 import ContactFormSection from '@/app/components/ContactFormSection';
 
@@ -22,6 +23,8 @@ export default function BlockchainDevelopmentClient({
   projects,
 }: BlockchainDevelopmentClientProps) {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const t = useTranslations('blockchainDevelopment');
+  const locale = useLocale();
 
   const { technologyStack } = technologyStackData;
 
@@ -40,22 +43,37 @@ export default function BlockchainDevelopmentClient({
         className="py-20 px-4 sm:px-6 lg:px-8"
         style={{ background: 'linear-gradient(180deg, #000810 0%, #010509 100%)' }}
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl  mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Left Column - Text Content */}
+            <div className="relative h-96 hidden md:block">
+              {/* Glowing Blue Background */}
+              <div 
+                className="absolute inset-0 -m-8 rounded-full blur-3xl opacity-60"
+                style={{
+                  background: 'radial-gradient(circle, rgba(79, 70, 229, 0.6) 0%, rgba(99, 102, 241, 0.4) 35%, transparent 70%)'
+                }}
+              ></div>
+              
+              {/* Laptop Image */}
+              <div className="relative z-10 h-full">
+                <Image
+                  src="/blockchain-laptop.webp"
+                  alt="Blockchain Development"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
             <div className="space-y-8">
               <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight">
-                CUSTOM BLOCKCHAIN DEVELOPMENT
+                {t('hero.title')}
               </h1>
 
               {/* Service List */}
               <ul className="space-y-4">
-                {[
-                  'Development of crypto web services and mobile applications',
-                  'Token and NFT collection launches',
-                  'Blockchain based Telegram Mini Apps development',
-                  'Fintech projects: exchanges, P2P platforms, wallets'
-                ].map((item, index) => (
+                {(t.raw('hero.services') as string[]).map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <div className="w-4 h-4 bg-[#4F46E5] mt-1 shrink-0"></div>
                     <span className="text-[#E5E7EB] text-lg">{item}</span>
@@ -72,20 +90,13 @@ export default function BlockchainDevelopmentClient({
                   boxShadow: '0 6px 20px rgba(79, 70, 229, 0.5)'
                 }}
               >
-                Submit a request
+                {t('hero.ctaButton')}
               </a>
             </div>
 
             {/* Right Column - Laptop Image */}
-            <div className="relative h-96 hidden md:block">
-              <Image
-                src="/blockchain-laptop.webp"
-                alt="Blockchain Development"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
+
+
           </div>
 
           {/* Anchor Links */}
@@ -109,7 +120,7 @@ export default function BlockchainDevelopmentClient({
       {/* Tech Stack Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-12">Tech Stack</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-12">{t('techStack.title')}</h2>
           
           {/* Blockchain Tags */}
           <div className="mb-12">
@@ -260,50 +271,14 @@ export default function BlockchainDevelopmentClient({
       {/* Our Advantages Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-12">Our advantages</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-12">{t('advantages.title')}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {[
-              {
-                number: '01',
-                title: 'Transparency',
-                description: 'Clear processes and regular updates on project progress',
-                icons: []
-              },
-              {
-                number: '02',
-                title: 'Experience',
-                description: '5+ years in blockchain development',
-                icons: []
-              },
-              {
-                number: '03',
-                title: 'Quality',
-                description: 'Code reviews and comprehensive testing',
-                icons: []
-              },
-              {
-                number: '04',
-                title: 'Support',
-                description: 'Post-launch maintenance and updates',
-                icons: []
-              }
-            ].map((advantage, index) => (
+            {(t.raw('advantages.items') as Array<{number: string; title: string; description: string}>).map((advantage, index) => (
               <div key={index} className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
                 <span className="text-[#4F46E5] text-sm font-bold">/ {advantage.number}</span>
                 <h3 className="text-xl font-bold text-black mt-2 mb-3">{advantage.title}</h3>
                 <p className="text-gray-600 text-sm">{advantage.description}</p>
-                
-                {advantage.icons.length > 0 && (
-                  <div className="flex gap-3 mt-4">
-                    {advantage.icons.map((icon) => (
-                      <div key={icon} className="w-6 h-6 text-gray-400">
-                        {/* Icon placeholders */}
-                        <div className="w-full h-full bg-gray-200 rounded"></div>
-                      </div>
-                    ))}
-                  </div>
-                )}
               </div>
             ))}
           </div>
@@ -320,9 +295,9 @@ export default function BlockchainDevelopmentClient({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
             {/* Left Column - Content */}
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Pricing</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">{t('pricing.title')}</h2>
               <p className="text-[#9CA3AF] text-lg mb-8">
-                Fixed prices with no hidden costs. Choose the service you need and get started.
+                {t('pricing.description')}
               </p>
             </div>
 
@@ -404,7 +379,7 @@ export default function BlockchainDevelopmentClient({
                 boxShadow: '0 6px 20px rgba(79, 70, 229, 0.5)'
               }}
             >
-              Discuss your project
+              {t('pricing.ctaButton')}
             </a>
           </div>
         </div>
@@ -417,17 +392,17 @@ export default function BlockchainDevelopmentClient({
         style={{ background: 'linear-gradient(180deg, #000810 0%, #010509 100%)' }}
       >
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">Cases</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">{t('cases.title')}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {projects.slice(0, 4).map((project) => {
-              const title = typeof project.title === 'object' ? project.title.en : project.title;
-              const description = typeof project.description === 'object' ? project.description.en : project.description;
+              const title = typeof project.title === 'object' ? project.title[locale as 'en' | 'fr'] : project.title;
+              const description = typeof project.description === 'object' ? project.description[locale as 'en' | 'fr'] : project.description;
               
               return (
                 <Link 
                   key={project._id}
-                  href={`/projects/${project.slug.current}`}
+                  href={`/${locale}/cases/${project.slug.current}`}
                   className="group"
                 >
                   <div 
@@ -466,14 +441,14 @@ export default function BlockchainDevelopmentClient({
           {/* All Projects Button */}
           <div className="text-center">
             <Link 
-              href="/projects"
+              href={`/${locale}/cases`}
               className="inline-block px-10 py-4 rounded-lg text-white font-bold text-lg transition-all duration-300 hover:-translate-y-1"
               style={{ 
                 background: 'linear-gradient(90deg, #4F46E5 0%, #6366F1 100%)',
                 boxShadow: '0 6px 20px rgba(79, 70, 229, 0.5)'
               }}
             >
-              All projects
+              {t('cases.ctaButton')}
             </Link>
           </div>
         </div>
@@ -486,7 +461,7 @@ export default function BlockchainDevelopmentClient({
       >
         <div className="max-w-7xl relative mx-auto">
           <div className="flex justify-between items-start mb-12 pr-60">
-            <h2 className="text-4xl md:text-5xl font-bold text-white">Development stages</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white">{t('developmentStages.title')}</h2>
             
             {/* Decorative Code Icons (Top Right) */}
             <div className="hidden lg:flex max-h-3/12 gap-4">
@@ -495,18 +470,7 @@ export default function BlockchainDevelopmentClient({
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {[
-              { number: 1, title: 'Request', description: 'Submit your project requirements' },
-              { number: 2, title: 'Introduction', description: 'Initial consultation and discussion' },
-              { number: 3, title: 'Estimation', description: 'Project timeline and cost calculation' },
-              { number: 4, title: 'Contract', description: 'Agreement signing and terms' },
-              { number: 5, title: 'Design', description: 'UI/UX and architecture planning' },
-              { number: 6, title: 'Development', description: 'Coding and implementation' },
-              { number: 7, title: 'Testing', description: 'Quality assurance and bug fixes' },
-              { number: 8, title: 'Deployment', description: 'Launch to production' },
-              { number: 9, title: 'Support', description: 'Maintenance and updates' },
-              { number: 10, title: 'Optimization', description: 'Performance improvements' },
-            ].map((stage) => (
+            {(t.raw('developmentStages.stages') as Array<{number: number; title: string; description: string}>).map((stage) => (
               <div key={stage.number} className="space-y-3">
                 <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center">
                   <span className="text-white font-bold">{stage.number}</span>
@@ -526,14 +490,14 @@ export default function BlockchainDevelopmentClient({
       >
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-white">Testimonials</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white">{t('testimonials.title')}</h2>
             
             {/* Navigation Arrows */}
             <div className="flex gap-3">
               <button 
                 onClick={prevTestimonial}
                 className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-slate-700 transition-colors"
-                aria-label="Previous testimonial"
+                aria-label={t('testimonials.previousButton')}
               >
                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -542,7 +506,7 @@ export default function BlockchainDevelopmentClient({
               <button 
                 onClick={nextTestimonial}
                 className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-slate-700 transition-colors"
-                aria-label="Next testimonial"
+                aria-label={t('testimonials.nextButton')}
               >
                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

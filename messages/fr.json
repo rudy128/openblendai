@@ -130,5 +130,90 @@
       "careers": "Carrières"
     },
     "addressText": "Yenigun mah. Mevlana cad. Midtown Plaza B floor 5, office 26, Muratpaşa/Antalya, Turkey"
+  },
+  "blockchainDevelopment": {
+    "hero": {
+      "title": "DÉVELOPPEMENT BLOCKCHAIN PERSONNALISÉ",
+      "services": [
+        "Développement de services web crypto et d'applications mobiles",
+        "Lancements de tokens et collections NFT",
+        "Développement de Telegram Mini Apps basées sur blockchain",
+        "Projets fintech : échanges, plateformes P2P, portefeuilles"
+      ],
+      "ctaButton": "Soumettre une demande"
+    },
+    "techStack": {
+      "title": "Stack Technologique"
+    },
+    "advantages": {
+      "title": "Nos Avantages",
+      "items": [
+        {
+          "number": "01",
+          "title": "Transparence",
+          "description": "Processus clairs et mises à jour régulières sur l'avancement du projet"
+        },
+        {
+          "number": "02",
+          "title": "Expérience",
+          "description": "Plus de 5 ans en développement blockchain"
+        },
+        {
+          "number": "03",
+          "title": "Qualité",
+          "description": "Revues de code et tests complets"
+        },
+        {
+          "number": "04",
+          "title": "Support",
+          "description": "Maintenance et mises à jour après le lancement"
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Tarification",
+      "description": "Prix fixes sans frais cachés. Choisissez le service dont vous avez besoin et commencez.",
+      "ctaButton": "Discuter de votre projet"
+    },
+    "cases": {
+      "title": "Cas d'étude",
+      "viewProject": "Voir le projet",
+      "ctaButton": "Voir tous les projets"
+    },
+    "testimonials": {
+      "title": "Témoignages",
+      "previousButton": "Précédent",
+      "nextButton": "Suivant"
+    },
+    "developmentStages": {
+      "title": "Étapes de Développement",
+      "stages": [
+        {
+          "number": "01",
+          "title": "Découverte",
+          "description": "Nous analysons vos exigences et créons une feuille de route détaillée du projet"
+        },
+        {
+          "number": "02",
+          "title": "Conception",
+          "description": "Nos designers créent des interfaces intuitives pour votre application"
+        },
+        {
+          "number": "03",
+          "title": "Développement",
+          "description": "Nous construisons votre solution en utilisant les dernières technologies blockchain"
+        },
+        {
+          "number": "04",
+          "title": "Tests",
+          "description": "Tests complets pour garantir la sécurité et la fiabilité"
+        },
+        {
+          "number": "05",
+          "title": "Lancement",
+          "description": "Nous déployons votre produit et fournissons un support continu"
+        }
+      ]
+    }
   }
 }
