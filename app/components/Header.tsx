@@ -6,6 +6,7 @@ import { useTranslations, useLocale } from 'next-intl';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDevelopmentDropdownOpen, setIsDevelopmentDropdownOpen] = useState(false);
   const t = useTranslations('navigation');
   const locale = useLocale();
 
@@ -71,20 +72,62 @@ const Header = () => {
         
         {/* Desktop Navigation Links */}
         <div className="hidden lg:flex items-center space-x-8 text-sm font-medium text-[#E5E7EB]">
-          <Link 
-            href="#services" 
-            className="hover:text-[#4F46E5] transition"
+          {/* Development Dropdown */}
+          <div 
+            className="relative group"
+            onMouseEnter={() => setIsDevelopmentDropdownOpen(true)}
+            onMouseLeave={() => setIsDevelopmentDropdownOpen(false)}
           >
-            {t('development')}
-          </Link>
-          <Link 
-            href="#" 
-            className="hover:text-[#4F46E5] transition"
-          >
-            {t('promotion')}
-          </Link>
-          <Link 
-            href="#projects" 
+            <button 
+              className="hover:text-[#4F46E5] transition flex items-center space-x-1 py-2"
+            >
+              <span>{t('development')}</span>
+              <svg 
+                className={`w-4 h-4 transition-transform ${isDevelopmentDropdownOpen ? 'rotate-180' : ''}`}
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            
+            {/* Dropdown Menu */}
+            {isDevelopmentDropdownOpen && (
+              <div 
+                className="absolute top-full left-0 pt-2 w-56"
+              >
+                <div 
+                  className="bg-[#1a1f2e] border border-gray-700 rounded-lg shadow-xl overflow-hidden"
+                  style={{
+                    background: 'linear-gradient(180deg, rgba(26, 31, 46, 0.98) 0%, rgba(16, 20, 30, 0.98) 100%)',
+                  }}
+                >
+                  <Link 
+                    href={`/${locale}/development/blockchain-development`}
+                    className="block px-4 py-3 text-sm text-[#E5E7EB] hover:bg-[#4F46E5]/10 hover:text-[#4F46E5] transition"
+                  >
+                    Custom Blockchain
+                  </Link>
+                  {/* <Link 
+                    href="#services"
+                    className="block px-4 py-3 text-sm text-[#E5E7EB] hover:bg-[#4F46E5]/10 hover:text-[#4F46E5] transition"
+                  >
+                    Web Development
+                  </Link>
+                  <Link 
+                    href="#services"
+                    className="block px-4 py-3 text-sm text-[#E5E7EB] hover:bg-[#4F46E5]/10 hover:text-[#4F46E5] transition"
+                  >
+                    Mobile Development
+                  </Link> */}
+                </div>
+              </div>
+            )}
+          </div>
+
+          <Link
+            href={`/${locale}/cases`}
             className="hover:text-[#4F46E5] transition"
           >
             {t('cases')}
@@ -94,12 +137,6 @@ const Header = () => {
             className="hover:text-[#4F46E5] transition"
           >
             {t('blog')}
-          </Link>
-          <Link 
-            href="#" 
-            className="hover:text-[#4F46E5] transition"
-          >
-            {t('partnerProgram')}
           </Link>
           <Link 
             href="#mission" 
@@ -159,22 +196,53 @@ const Header = () => {
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-[#161B22] border-t border-gray-800">
           <div className="px-4 py-4 space-y-3">
-            <Link 
-              href="#services" 
-              className="block text-sm font-medium text-[#E5E7EB] hover:text-[#4F46E5] transition py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {t('development')}
-            </Link>
-            <Link 
-              href="#" 
-              className="block text-sm font-medium text-[#E5E7EB] hover:text-[#4F46E5] transition py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {t('promotion')}
-            </Link>
-            <Link 
-              href="#projects" 
+            {/* Development Submenu */}
+            <div>
+              <button 
+                className="w-full text-left text-sm font-medium text-[#E5E7EB] hover:text-[#4F46E5] transition py-2 flex items-center justify-between"
+                onClick={() => setIsDevelopmentDropdownOpen(!isDevelopmentDropdownOpen)}
+              >
+                <span>{t('development')}</span>
+                <svg 
+                  className={`w-4 h-4 transition-transform ${isDevelopmentDropdownOpen ? 'rotate-180' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              {/* Development Dropdown Items */}
+              {isDevelopmentDropdownOpen && (
+                <div className="ml-4 mt-2 space-y-2">
+                  <Link 
+                    href={`/${locale}/development/blockchain-development`}
+                    className="block text-sm text-[#9CA3AF] hover:text-[#4F46E5] transition py-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Custom Blockchain
+                  </Link>
+                  {/* <Link 
+                    href="#services"
+                    className="block text-sm text-[#9CA3AF] hover:text-[#4F46E5] transition py-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Web Development
+                  </Link>
+                  <Link 
+                    href="#services"
+                    className="block text-sm text-[#9CA3AF] hover:text-[#4F46E5] transition py-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Mobile Development
+                  </Link> */}
+                </div>
+              )}
+            </div>
+
+            <Link
+              href={`/${locale}/cases`}
               className="block text-sm font-medium text-[#E5E7EB] hover:text-[#4F46E5] transition py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
@@ -186,13 +254,6 @@ const Header = () => {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {t('blog')}
-            </Link>
-            <Link 
-              href="#" 
-              className="block text-sm font-medium text-[#E5E7EB] hover:text-[#4F46E5] transition py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {t('partnerProgram')}
             </Link>
             <Link 
               href="#mission" 
