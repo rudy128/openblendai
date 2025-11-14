@@ -1,8 +1,10 @@
 'use client';
 import React, { useRef } from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 const ProjectsSection = () => {
+  const t = useTranslations('projects');
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scrollLeft = () => {
@@ -22,12 +24,12 @@ const ProjectsSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-[#E5E7EB]">Projects created by us</h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[#E5E7EB]">{t('title')}</h2>
           <Link 
             href="#" 
             className="bg-linear-to-r from-[#4F46E5] to-[#6366F1] hover:shadow-[0_6px_20px_rgba(79,70,229,0.5)] hover:-translate-y-1 text-white font-semibold py-3 px-8 rounded-xl mt-4 md:mt-0 shadow-lg transition-all duration-300"
           >
-            See all cases
+            {t('seeAllCases')}
           </Link>
         </div>
 

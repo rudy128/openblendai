@@ -1,7 +1,10 @@
 'use client';
 import React from 'react';
+import { useTranslations } from 'next-intl';
 
 const MissionSection = () => {
+  const t = useTranslations('mission');
+
   return (
     <section id="mission" className="w-full py-20 bg-white text-[#0b1220]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center space-y-16 lg:space-y-0 lg:space-x-12">
@@ -9,10 +12,10 @@ const MissionSection = () => {
         {/* Left Content */}
         <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
           <h2 className="text-4xl md:text-5xl font-extrabold text-[#0b1220] leading-snug">
-            Our mission — is from idea to digital product with a team of experts
+            {t('title')}
           </h2>
           <p className="text-xl text-[#6b7280] max-w-lg mx-auto lg:mx-0">
-            Axiomica is an international team of web2/web3 developers that specializes in blockchain development. We are fans of our business and love to solve non-standard tasks through the prism of our experience and expertise.
+            {t('description')}
           </p>
         </div>
 

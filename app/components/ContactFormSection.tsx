@@ -1,7 +1,10 @@
 'use client';
 import React from 'react';
+import { useTranslations } from 'next-intl';
 
 const ContactFormSection = () => {
+  const t = useTranslations('contact');
+
   return (
     <section id="contact" className="w-full py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -9,53 +12,53 @@ const ContactFormSection = () => {
           
           {/* Left: Form */}
           <div className="lg:w-1/2 w-full space-y-8">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">Let&apos;s discuss your project together</h2>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">{t('title')}</h2>
             
             <form className="space-y-6">
               {/* Name */}
               <div>
-                <label htmlFor="name" className="block text-lg font-medium text-gray-600 mb-2">Name *</label>
+                <label htmlFor="name" className="block text-lg font-medium text-gray-600 mb-2">{t('name')} *</label>
                 <input 
                   type="text" 
                   id="name" 
                   required 
                   className="w-full bg-transparent border-b border-gray-300 text-gray-900 focus:border-[#4f46e5] focus:ring-0 p-2 outline-none placeholder-gray-500" 
-                  placeholder="Enter your name"
+                  placeholder={t('placeholders.name')}
                 />
               </div>
 
               {/* Email and Phone (Side-by-Side on desktop) */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="email" className="block text-lg font-medium text-gray-600 mb-2">Email *</label>
+                  <label htmlFor="email" className="block text-lg font-medium text-gray-600 mb-2">{t('email')} *</label>
                   <input 
                     type="email" 
                     id="email" 
                     required 
                     className="w-full bg-transparent border-b border-gray-300 text-gray-900 focus:border-[#4f46e5] focus:ring-0 p-2 outline-none placeholder-gray-500" 
-                    placeholder="Enter your email"
+                    placeholder={t('placeholders.email')}
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-lg font-medium text-gray-600 mb-2">Phone</label>
+                  <label htmlFor="phone" className="block text-lg font-medium text-gray-600 mb-2">{t('phone')}</label>
                   <input 
                     type="tel" 
                     id="phone" 
                     className="w-full bg-transparent border-b border-gray-300 text-gray-900 focus:border-[#4f46e5] focus:ring-0 p-2 outline-none placeholder-gray-500" 
-                    placeholder="Enter your phone"
+                    placeholder={t('placeholders.phone')}
                   />
                 </div>
               </div>
 
               {/* Project Description */}
               <div>
-                <label htmlFor="project" className="block text-lg font-medium text-gray-600 mb-2">Tell us about your project *</label>
+                <label htmlFor="project" className="block text-lg font-medium text-gray-600 mb-2">{t('project')} *</label>
                 <textarea 
                   id="project" 
                   rows={3} 
                   required 
                   className="w-full bg-transparent border-b border-gray-300 text-gray-900 focus:border-[#4f46e5] focus:ring-0 p-2 outline-none resize-none placeholder-gray-500" 
-                  placeholder="Describe your project"
+                  placeholder={t('placeholders.project')}
                 ></textarea>
               </div>
 
@@ -68,14 +71,14 @@ const ContactFormSection = () => {
                     className="w-4 h-4 text-[#4f46e5] bg-transparent border-gray-300 rounded focus:ring-[#4f46e5] focus:ring-2"
                   />
                   <label htmlFor="privacy" className="ml-2 text-sm text-gray-600">
-                    I agree to the processing of personal data
+                    {t('privacy')}
                   </label>
                 </div>
                 <button 
                   type="submit" 
                   className="bg-[#5c6674] text-white font-semibold py-3 px-12 rounded-xl transition duration-150 hover:bg-[#6f7c8f]"
                 >
-                  Send
+                  {t('send')}
                 </button>
               </div>
             </form>

@@ -1,0 +1,127 @@
+{
+  "navigation": {
+    "development": "Développement",
+    "promotion": "Promotion",
+    "cases": "Cas",
+    "blog": "Blog",
+    "partnerProgram": "Programme partenaire",
+    "aboutUs": "À propos de nous",
+    "contacts": "Contacts"
+  },
+  "hero": {
+    "title": {
+      "part1": "Développement de",
+      "highlight1": "portefeuilles crypto",
+      "part2": "et d'échangeurs",
+      "highlight2": "clé en main"
+    },
+    "subtitle": "Transformons votre idée en produit et attirons les premiers clients",
+    "primaryButton": "Soumettre votre demande",
+    "secondaryButton": "Planifier une réunion en ligne"
+  },
+  "services": {
+    "title": "Comment pouvons-nous vous être utiles ?",
+    "primaryService": {
+      "title": "Développement d'applications et services web3",
+      "description": "Cotation et tenue de marché pour les projets crypto"
+    },
+    "list": [
+      {
+        "id": 1,
+        "badge": "🔥 POPULAIRE",
+        "title": "Développement de tokens et cryptomonnaies",
+        "icon": "crypto",
+        "linkText": "En savoir plus"
+      },
+      {
+        "id": 2,
+        "badge": "🔥 POPULAIRE",
+        "title": "Développement de Telegram Mini Apps",
+        "icon": "mobile",
+        "linkText": "En savoir plus"
+      },
+      {
+        "id": 3,
+        "badge": "✨ NOUVEAU",
+        "title": "Développement de portefeuilles crypto",
+        "icon": "wallet",
+        "linkText": "En savoir plus"
+      },
+      {
+        "id": 4,
+        "badge": "🔥 POPULAIRE",
+        "title": "Développement d'échanges de cryptomonnaies, échangeurs, plateformes P2P",
+        "icon": "exchange",
+        "linkText": "En savoir plus"
+      },
+      {
+        "id": 5,
+        "badge": "🔥 POPULAIRE",
+        "title": "Développement d'applications DeFi",
+        "icon": "defi",
+        "linkText": "En savoir plus"
+      },
+      {
+        "id": 6,
+        "badge": "✨ NOUVEAU",
+        "title": "Développement de smart contracts",
+        "icon": "smart",
+        "linkText": "En savoir plus"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projets créés par nous",
+    "seeAllCases": "Voir tous les cas"
+  },
+  "mission": {
+    "title": "Notre mission — de l'idée au produit numérique avec une équipe d'experts",
+    "description": "Axiomica est une équipe internationale de développeurs web2/web3 spécialisée dans le développement blockchain. Nous sommes passionnés par notre métier et aimons résoudre des tâches non standard à travers le prisme de notre expérience et de notre expertise."
+  },
+  "contact": {
+    "title": "Discutons ensemble de votre projet",
+    "name": "Nom",
+    "email": "Email",
+    "phone": "Téléphone",
+    "project": "Parlez-nous de votre projet",
+    "privacy": "J'accepte le traitement des données personnelles",
+    "send": "Envoyer",
+    "placeholders": {
+      "name": "Entrez votre nom",
+      "email": "Entrez votre email",
+      "phone": "Entrez votre téléphone",
+      "project": "Décrivez votre projet"
+    }
+  },
+  "technologyStack": {
+    "title": "Stack Technologique",
+    "subtitle": "Nous utilisons les dernières technologies avancées, améliorant notre expertise quotidiennement"
+  },
+  "footer": {
+    "development": "Développement",
+    "promotion": "Promotion",
+    "resources": "Ressources",
+    "address": "Adresse",
+    "copyright": "Axiomica ©2025",
+    "privacyPolicy": "Politique de confidentialité",
+    "cookiePolicy": "Politique des cookies",
+    "developmentLinks": {
+      "tokensBlockchain": "Tokens et Blockchain",
+      "blockchainWallets": "Portefeuilles blockchain",
+      "smartContracts": "Smart contracts",
+      "telegramMiniApps": "Telegram Mini Apps",
+      "blockchainExchangesP2P": "Blockchain, échanges, P2P",
+      "paymentSystems": "Systèmes de paiement électronique",
+      "blockchainProjects": "Développement de projets blockchain"
+    },
+    "promotionLinks": {
+      "cryptoExchanges": "Cotation sur les échanges crypto",
+      "coinmarketcap": "Cotation sur Coinmarketcap"
+    },
+    "resourcesLinks": {
+      "blog": "Blog",
+      "careers": "Carrières"
+    },
+    "addressText": "Yenigun mah. Mevlana cad. Midtown Plaza B floor 5, office 26, Muratpaşa/Antalya, Turkey"
+  }
+}

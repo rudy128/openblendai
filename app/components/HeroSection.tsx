@@ -2,8 +2,11 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 const HeroSection = () => {
+  const t = useTranslations('hero');
+
   return (
     <>
       {/* Hero Section */}
@@ -15,23 +18,23 @@ const HeroSection = () => {
         {/* Left Content */}
         <div className="lg:w-1/2 space-y-8 text-center lg:text-left">
           <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
-            Development of <span className="text-[#4F46E5]">crypto wallets</span> and exchangers <span className="text-[#4F46E5]">turnkey</span>
+            {t('title.part1')} <span className="text-[#4F46E5]">{t('title.highlight1')}</span> {t('title.part2')} <span className="text-[#4F46E5]">{t('title.highlight2')}</span>
           </h1>
           <p className="text-xl text-[#9CA3AF] max-w-lg mx-auto lg:mx-0">
-            Let&apos;s turn your idea into a product and bring the first customers
+            {t('subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 justify-center lg:justify-start pt-4">
             <Link 
               href="#contact" 
               className="bg-linear-to-r from-[#4F46E5] to-[#6366F1] hover:shadow-[0_6px_20px_rgba(79,70,229,0.5)] hover:-translate-y-1 text-white font-semibold py-3 px-8 rounded-xl shadow-lg transition-all duration-300"
             >
-              Submit your application
+              {t('primaryButton')}
             </Link>
             <Link 
               href="#contact" 
               className="text-[#E5E7EB] hover:text-[#4F46E5] font-semibold py-3 px-8 transition flex items-center justify-center group"
             >
-              Plan an online meeting 
+              {t('secondaryButton')} 
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 width="16" 

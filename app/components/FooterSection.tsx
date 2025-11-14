@@ -1,7 +1,10 @@
 'use client';
 import React from 'react';
+import { useTranslations } from 'next-intl';
 
 const FooterSection = () => {
+  const t = useTranslations('footer');
+
   return (
     <footer className="bg-[#0d1117] border-t border-[#2f3338] pt-16 pb-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,41 +34,41 @@ const FooterSection = () => {
           
           {/* Col 2: Development */}
           <div className="space-y-3">
-            <h4 className="text-lg font-bold text-[#e5e7eb] mb-4">Development</h4>
+            <h4 className="text-lg font-bold text-[#e5e7eb] mb-4">{t('development')}</h4>
             <ul className="space-y-3 text-sm text-[#9ca3af]">
               <li>
                 <a href="#" className="hover:text-[#4f46e5] transition">
-                  Tokens and Blockchain
+                  {t('developmentLinks.tokensBlockchain')}
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-[#4f46e5] transition">
-                  Blockchain wallets
+                  {t('developmentLinks.blockchainWallets')}
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-[#4f46e5] transition">
-                  Smart contracts
+                  {t('developmentLinks.smartContracts')}
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-[#4f46e5] transition">
-                  Telegram Mini Apps
+                  {t('developmentLinks.telegramMiniApps')}
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-[#4f46e5] transition">
-                  Blockchain, exchanges, P2P
+                  {t('developmentLinks.blockchainExchangesP2P')}
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-[#4f46e5] transition">
-                  Electronic payment systems
+                  {t('developmentLinks.paymentSystems')}
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-[#4f46e5] transition">
-                  Development of blockchain projects
+                  {t('developmentLinks.blockchainProjects')}
                 </a>
               </li>
             </ul>
@@ -73,16 +76,16 @@ const FooterSection = () => {
           
           {/* Col 3: Promotion */}
           <div className="space-y-3">
-            <h4 className="text-lg font-bold text-[#e5e7eb] mb-4">Promotion</h4>
+            <h4 className="text-lg font-bold text-[#e5e7eb] mb-4">{t('promotion')}</h4>
             <ul className="space-y-3 text-sm text-[#9ca3af]">
               <li>
                 <a href="#" className="hover:text-[#4f46e5] transition">
-                  Listing on crypto exchanges
+                  {t('promotionLinks.cryptoExchanges')}
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-[#4f46e5] transition">
-                  Listing on Coinmarketcap
+                  {t('promotionLinks.coinmarketcap')}
                 </a>
               </li>
             </ul>
@@ -90,16 +93,16 @@ const FooterSection = () => {
 
           {/* Col 4: Resources */}
           <div className="space-y-3">
-            <h4 className="text-lg font-bold text-[#e5e7eb] mb-4">Resources</h4>
+            <h4 className="text-lg font-bold text-[#e5e7eb] mb-4">{t('resources')}</h4>
             <ul className="space-y-3 text-sm text-[#9ca3af]">
               <li>
                 <a href="#" className="hover:text-[#4f46e5] transition">
-                  Blog
+                  {t('resourcesLinks.blog')}
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-[#4f46e5] transition">
-                  Careers
+                  {t('resourcesLinks.careers')}
                 </a>
               </li>
             </ul>
@@ -107,9 +110,9 @@ const FooterSection = () => {
 
           {/* Col 5: Address (Shifted to the right on desktop, matching screenshot layout) */}
           <div className="space-y-3 col-span-2 md:col-span-1 lg:col-span-1">
-            <h4 className="text-lg font-bold text-[#e5e7eb] mb-4">Address</h4>
+            <h4 className="text-lg font-bold text-[#e5e7eb] mb-4">{t('address')}</h4>
             <p className="text-sm text-[#9ca3af]">
-              Yenigun mah. Mevlana cad. Midtown Plaza B floor 5, office 26, Muratpaşa/Antalya, Turkey
+              {t('addressText')}
             </p>
           </div>
 
@@ -117,13 +120,13 @@ const FooterSection = () => {
 
         {/* Copyright and Policy Links */}
         <div className="flex flex-col md:flex-row justify-between items-center mt-12 pt-6 border-t border-[#2f3338] text-xs text-[#9ca3af]">
-          <p>Axiomica ©2025</p>
+          <p>{t('copyright')}</p>
           <div className="flex space-x-4 mt-2 md:mt-0">
             <a href="#" className="hover:text-[#4f46e5] transition">
-              Privacy Policy
+              {t('privacyPolicy')}
             </a>
             <a href="#" className="hover:text-[#4f46e5] transition">
-              Cookie policy
+              {t('cookiePolicy')}
             </a>
           </div>
         </div>

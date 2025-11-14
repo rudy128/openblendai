@@ -1,0 +1,127 @@
+{
+  "navigation": {
+    "development": "Development",
+    "promotion": "Promotion",
+    "cases": "Cases",
+    "blog": "Blog",
+    "partnerProgram": "Partner program",
+    "aboutUs": "About us",
+    "contacts": "Contacts"
+  },
+  "hero": {
+    "title": {
+      "part1": "Development of",
+      "highlight1": "crypto wallets",
+      "part2": "and exchangers",
+      "highlight2": "turnkey"
+    },
+    "subtitle": "Let's turn your idea into a product and bring the first customers",
+    "primaryButton": "Submit your application",
+    "secondaryButton": "Plan an online meeting"
+  },
+  "services": {
+    "title": "How can we be of service to you?",
+    "primaryService": {
+      "title": "Development of web3 app and services",
+      "description": "Listing and market making for crypto projects"
+    },
+    "list": [
+      {
+        "id": 1,
+        "badge": "🔥 HOT",
+        "title": "Tokens and cryptocurrencies development",
+        "icon": "crypto",
+        "linkText": "Learn More"
+      },
+      {
+        "id": 2,
+        "badge": "🔥 HOT",
+        "title": "Telegram Mini Apps development",
+        "icon": "mobile",
+        "linkText": "Learn More"
+      },
+      {
+        "id": 3,
+        "badge": "✨ NEW",
+        "title": "Development of crypto wallets",
+        "icon": "wallet",
+        "linkText": "Learn More"
+      },
+      {
+        "id": 4,
+        "badge": "🔥 HOT",
+        "title": "Development of cryptocurrency exchanges, exchangers, P2P platforms",
+        "icon": "exchange",
+        "linkText": "Learn More"
+      },
+      {
+        "id": 5,
+        "badge": "🔥 HOT",
+        "title": "Development of DeFi applications",
+        "icon": "defi",
+        "linkText": "Learn More"
+      },
+      {
+        "id": 6,
+        "badge": "✨ NEW",
+        "title": "Development of smart contracts",
+        "icon": "smart",
+        "linkText": "Learn More"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projects created by us",
+    "seeAllCases": "See all cases"
+  },
+  "mission": {
+    "title": "Our mission — is from idea to digital product with a team of experts",
+    "description": "Axiomica is an international team of web2/web3 developers that specializes in blockchain development. We are fans of our business and love to solve non-standard tasks through the prism of our experience and expertise."
+  },
+  "contact": {
+    "title": "Let's discuss your project together",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "project": "Tell us about your project",
+    "privacy": "I agree to the processing of personal data",
+    "send": "Send",
+    "placeholders": {
+      "name": "Enter your name",
+      "email": "Enter your email",
+      "phone": "Enter your phone",
+      "project": "Describe your project"
+    }
+  },
+  "technologyStack": {
+    "title": "Technology Stack",
+    "subtitle": "We use the latest advanced technologies, pumping our expertise daily"
+  },
+  "footer": {
+    "development": "Development",
+    "promotion": "Promotion",
+    "resources": "Resources",
+    "address": "Address",
+    "copyright": "Axiomica ©2025",
+    "privacyPolicy": "Privacy Policy",
+    "cookiePolicy": "Cookie policy",
+    "developmentLinks": {
+      "tokensBlockchain": "Tokens and Blockchain",
+      "blockchainWallets": "Blockchain wallets",
+      "smartContracts": "Smart contracts",
+      "telegramMiniApps": "Telegram Mini Apps",
+      "blockchainExchangesP2P": "Blockchain, exchanges, P2P",
+      "paymentSystems": "Electronic payment systems",
+      "blockchainProjects": "Development of blockchain projects"
+    },
+    "promotionLinks": {
+      "cryptoExchanges": "Listing on crypto exchanges",
+      "coinmarketcap": "Listing on Coinmarketcap"
+    },
+    "resourcesLinks": {
+      "blog": "Blog",
+      "careers": "Careers"
+    },
+    "addressText": "Yenigun mah. Mevlana cad. Midtown Plaza B floor 5, office 26, Muratpaşa/Antalya, Turkey"
+  }
+}

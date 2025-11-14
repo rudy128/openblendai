@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import technologyStackData from '../../messages/technologyStack.json';
 
 interface Technology {
@@ -42,14 +43,15 @@ const TechGrid = ({ section, isGridLayout = true }: { section: TechSection, isGr
 
 const TechnologyStackSection = () => {
   const { technologyStack } = technologyStackData;
+  const t = useTranslations('technologyStack');
   
   return (
     <section id="tech-stack" className="w-full py-20 text-[#e5e7eb]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-[#e5e7eb]">{technologyStack.title}</h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[#e5e7eb]">{t('title')}</h2>
           <p className="text-xl text-[#9ca3af] mt-4 lg:mt-0 lg:w-1/2">
-            {technologyStack.subtitle}
+            {t('subtitle')}
           </p>
         </div>
 

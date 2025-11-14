@@ -1,7 +1,12 @@
-import type { NextConfig } from "next";
+import createNextIntlPlugin from 'next-intl/plugin';
 
-const nextConfig: NextConfig = {
+const withNextIntl = createNextIntlPlugin('./i18n.ts');
+
+const nextConfig = {
   /* config options here */
+  images: {
+    domains: ['axiomica.io'],
+  }
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

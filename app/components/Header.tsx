@@ -2,9 +2,12 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useTranslations, useLocale } from 'next-intl';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const t = useTranslations('navigation');
+  const locale = useLocale();
 
   return (
     <header 
@@ -72,48 +75,60 @@ const Header = () => {
             href="#services" 
             className="hover:text-[#4F46E5] transition"
           >
-            Development
+            {t('development')}
           </Link>
           <Link 
             href="#" 
             className="hover:text-[#4F46E5] transition"
           >
-            Promotion
+            {t('promotion')}
           </Link>
           <Link 
             href="#projects" 
             className="hover:text-[#4F46E5] transition"
           >
-            Cases
+            {t('cases')}
           </Link>
           <Link 
             href="#" 
             className="hover:text-[#4F46E5] transition"
           >
-            Blog
+            {t('blog')}
           </Link>
           <Link 
             href="#" 
             className="hover:text-[#4F46E5] transition"
           >
-            Partner program
+            {t('partnerProgram')}
           </Link>
           <Link 
             href="#mission" 
             className="hover:text-[#4F46E5] transition"
           >
-            About us
+            {t('aboutUs')}
           </Link>
           <Link 
             href="#contact" 
             className="hover:text-[#4F46E5] transition"
           >
-            Contacts
+            {t('contacts')}
           </Link>
         </div>
 
-        {/* Social Icons and Mobile Menu Button */}
+        {/* Language Switcher, Social Icons and Mobile Menu Button */}
         <div className="flex items-center space-x-4">
+          {/* Language Switcher */}
+          <Link 
+            href={`/${locale === 'en' ? 'fr' : 'en'}`}
+            className="text-xs font-semibold px-3 py-1.5 rounded-full text-white transition-all duration-300 transform hover:scale-105"
+            style={{
+              background: 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)',
+              boxShadow: '0 4px 15px rgba(99, 102, 241, 0.3)',
+            }}
+          >
+            {locale === 'en' ? 'FR' : 'EN'}
+          </Link>
+          
           <Link 
             href="#" 
             className="text-[#E5E7EB] hover:text-[#4F46E5] transition"
@@ -149,49 +164,49 @@ const Header = () => {
               className="block text-sm font-medium text-[#E5E7EB] hover:text-[#4F46E5] transition py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Development
+              {t('development')}
             </Link>
             <Link 
               href="#" 
               className="block text-sm font-medium text-[#E5E7EB] hover:text-[#4F46E5] transition py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Promotion
+              {t('promotion')}
             </Link>
             <Link 
               href="#projects" 
               className="block text-sm font-medium text-[#E5E7EB] hover:text-[#4F46E5] transition py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Cases
+              {t('cases')}
             </Link>
             <Link 
               href="#" 
               className="block text-sm font-medium text-[#E5E7EB] hover:text-[#4F46E5] transition py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Blog
+              {t('blog')}
             </Link>
             <Link 
               href="#" 
               className="block text-sm font-medium text-[#E5E7EB] hover:text-[#4F46E5] transition py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Partner program
+              {t('partnerProgram')}
             </Link>
             <Link 
               href="#mission" 
               className="block text-sm font-medium text-[#E5E7EB] hover:text-[#4F46E5] transition py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              About us
+              {t('aboutUs')}
             </Link>
             <Link 
               href="#contact" 
               className="block text-sm font-medium text-[#E5E7EB] hover:text-[#4F46E5] transition py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Contacts
+              {t('contacts')}
             </Link>
           </div>
         </div>

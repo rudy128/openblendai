@@ -1,7 +1,15 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
-import servicesData from '../../messages/services.json';
+import { useTranslations } from 'next-intl';
+
+interface Service {
+  id: number;
+  badge: string;
+  title: string;
+  icon: string;
+  linkText: string;
+}
 
 // Icon mapping for different service types
 const iconMap = {
@@ -113,11 +121,13 @@ const iconMap = {
 };
 
 const ServicesSection = () => {
+  const t = useTranslations('services');
+
   return (
     <section id="services" className="w-full py-20 bg-white text-[#0b1220]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl md:text-5xl font-extrabold mb-16 text-[#0b1220]">
-          {servicesData.title}
+          {t('title')}
         </h2>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -141,14 +151,14 @@ const ServicesSection = () => {
                 <polygon points="5,3 19,12 5,21 12,12"></polygon>
               </svg>
             </div>
-            <h3 className="text-2xl font-bold text-[#0b1220]">{servicesData.primaryService.title}</h3>
+            <h3 className="text-2xl font-bold text-[#0b1220]">{t('primaryService.title')}</h3>
           </div>
-          <p className="text-xl text-[#6b7280] ml-16 leading-relaxed">{servicesData.primaryService.description}</p>
+          <p className="text-xl text-[#6b7280] ml-16 leading-relaxed">{t('primaryService.description')}</p>
         </div>
 
         {/* Right Column: Specific Services List */}
         <div className="border border-[#e6e9ef] rounded-2xl overflow-hidden">
-          {servicesData.services.map((service) => (
+          {t.raw('list').map((service: Service) => (
             <div 
               key={service.id}
               className="group p-6 flex items-start space-x-4 transition-colors duration-200 hover:bg-gray-50 border-b border-[#e6e9ef] last:border-b-0"
@@ -158,11 +168,11 @@ const ServicesSection = () => {
               </div>
               <div>
                 <span className={`text-xs font-semibold px-2 py-0.5 rounded-full mr-2 ${
-                  service.badge.type === 'hot' 
+                  service.badge.includes('HOT') || service.badge.includes('ПОПУЛЯРНО')
                     ? 'text-red-500 bg-red-500/10' 
                     : 'text-green-500 bg-green-500/10'
                 }`}>
-                  {service.badge.text}
+                  {service.badge}
                 </span>
                 <h4 className="text-lg font-bold text-[#0b1220]">{service.title}</h4>
                 <Link 
