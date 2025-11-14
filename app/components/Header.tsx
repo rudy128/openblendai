@@ -147,13 +147,13 @@ const Header = () => {
             {t('blog')}
           </Link>
           <Link 
-            href="#mission" 
+            href={`/${locale}/about`}
             className="hover:text-[#4F46E5] transition"
           >
             {t('aboutUs')}
           </Link>
           <Link 
-            href="#contact" 
+            href={`/${locale}/contact`}
             className="hover:text-[#4F46E5] transition"
           >
             {t('contacts')}
@@ -264,14 +264,14 @@ const Header = () => {
               {t('blog')}
             </Link>
             <Link 
-              href="#mission" 
+              href={`/${locale}/about`}
               className="block text-sm font-medium text-[#E5E7EB] hover:text-[#4F46E5] transition py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {t('aboutUs')}
             </Link>
             <Link 
-              href="#contact" 
+              href={`/${locale}/contact`}
               className="block text-sm font-medium text-[#E5E7EB] hover:text-[#4F46E5] transition py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
