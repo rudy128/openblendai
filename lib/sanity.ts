@@ -23,7 +23,11 @@ export const PROJECTS_QUERY = `*[_type == "project"] | order(publishedAt desc) {
   description,
   mainImage,
   technologies,
-  category,
+  category->{
+    title,
+    glowColor
+  },
+  categoryLegacy,
   liveUrl,
   publishedAt,
   featured
@@ -36,7 +40,11 @@ export const FEATURED_PROJECTS_QUERY = `*[_type == "project" && featured == true
   description,
   mainImage,
   technologies,
-  category,
+  category->{
+    title,
+    glowColor
+  },
+  categoryLegacy,
   liveUrl,
   publishedAt
 }`;
@@ -48,9 +56,36 @@ export const PROJECT_BY_SLUG_QUERY = `*[_type == "project" && slug.current == $s
   description,
   mainImage,
   technologies,
-  category,
+  category->{
+    title,
+    glowColor
+  },
+  categoryLegacy,
   liveUrl,
   publishedAt
+}`;
+
+export const PROJECT_DETAIL_QUERY = `*[_type == "project" && slug.current == $slug][0]{
+  _id,
+  title,
+  "slug": slug.current,
+  description,
+  websiteUrl,
+  "galleryImages": galleryImages[]{
+    "url": asset->url,
+    alt
+  },
+  task,
+  result,
+  developmentTime,
+  "stack": stack[]->{
+    name,
+    "iconUrl": icon.asset->url
+  }
+}`;
+
+export const ALL_PROJECT_SLUGS_QUERY = `*[_type == "project" && defined(slug.current)]{
+  "slug": slug.current
 }`;
 
 export const BLOGS_QUERY = `*[_type == "blog"] | order(publishedAt desc) {

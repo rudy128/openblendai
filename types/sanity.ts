@@ -27,6 +27,18 @@ export interface SanityImage {
   alt?: string;
 }
 
+export interface GalleryImage {
+  url: string;
+  alt?: string;
+}
+
+export interface Technology {
+  _id: string;
+  name: string;
+  iconUrl: string;
+  order?: number;
+}
+
 export interface Project {
   _id: string;
   _type: 'project';
@@ -37,10 +49,18 @@ export interface Project {
   description?: LocalizedText;
   mainImage?: SanityImage;
   technologies?: string[];
-  category?: string;
+  category?: Category;
+  categoryLegacy?: string;
+  order?: number;
   liveUrl?: string;
   publishedAt?: string;
   featured?: boolean;
+  websiteUrl?: string;
+  galleryImages?: GalleryImage[];
+  task?: LocalizedText;
+  result?: LocalizedText;
+  developmentTime?: string;
+  stack?: Technology[];
 }
 
 export interface Blog {
@@ -91,5 +111,16 @@ export interface TechIcon {
   name: string;
   icon: SanityImage;
   category: string;
+  order?: number;
+}
+
+export interface Category {
+  _id: string;
+  _type: 'category';
+  title: LocalizedString;
+  slug: {
+    current: string;
+  };
+  glowColor: string;
   order?: number;
 }

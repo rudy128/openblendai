@@ -29,12 +29,27 @@ export default function ProjectsClient({ projects }: ProjectsClientProps) {
   };
 
   // Get unique categories from projects
-  const categories = ['all', ...Array.from(new Set(projects.map(p => p.category).filter((c): c is string => Boolean(c))))];
+  const categories = ['all', ...Array.from(new Set(
+    projects
+      .map(p => {
+        if (p.category && typeof p.category === 'object' && 'title' in p.category) {
+          return p.category.title[locale as 'en' | 'fr'] || p.category.title.en;
+        }
+        return p.categoryLegacy;
+      })
+      .filter((c): c is string => Boolean(c))
+  ))];
 
   // Filter projects based on active category
   const filteredProjects = activeCategory === 'all' 
     ? projects 
-    : projects.filter(p => p.category === activeCategory);
+    : projects.filter(p => {
+        if (p.category && typeof p.category === 'object' && 'title' in p.category) {
+          const categoryTitle = p.category.title[locale as 'en' | 'fr'] || p.category.title.en;
+          return categoryTitle === activeCategory;
+        }
+        return p.categoryLegacy === activeCategory;
+      });
 
   return (
     <section id="projects" className="bg-[#0D1117] w-full py-20">
@@ -62,7 +77,7 @@ export default function ProjectsClient({ projects }: ProjectsClientProps) {
                   : 'text-[#9CA3AF] bg-[#161B22] border border-gray-700 hover:bg-gray-700/50'
               }`}
             >
-              {category === 'all' ? 'All' : category?.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
+              {category === 'all' ? 'All' : category}
             </button>
           ))}
         </div>
@@ -130,9 +145,11 @@ export default function ProjectsClient({ projects }: ProjectsClientProps) {
                     )}
                   </div>
                   
-                  {project.category && (
+                  {(project.category || project.categoryLegacy) && (
                     <span className="text-sm font-medium text-[#9CA3AF]">
-                      {project.category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
+                      {project.category && typeof project.category === 'object' && 'title' in project.category
+                        ? (project.category.title[locale as 'en' | 'fr'] || project.category.title.en)
+                        : project.categoryLegacy}
                     </span>
                   )}
                   

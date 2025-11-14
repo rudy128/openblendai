@@ -4,7 +4,6 @@ import ProjectsSection from "@/app/components/ProjectsSection";
 import MissionSection from "@/app/components/MissionSection";
 import TechnologyStackSection from "@/app/components/TechnologyStackSection";
 import ContactFormSection from "@/app/components/ContactFormSection";
-import FooterSection from "@/app/components/FooterSection";
 
 export default function Home() {
   return (
@@ -15,7 +14,6 @@ export default function Home() {
       <MissionSection />
       <TechnologyStackSection />
       <ContactFormSection />
-      <FooterSection />
     </>
   );
 }

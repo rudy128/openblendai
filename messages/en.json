@@ -97,6 +97,13 @@
     "title": "Technology Stack",
     "subtitle": "We use the latest advanced technologies, pumping our expertise daily"
   },
+  "cases": {
+    "title": "Portfolio",
+    "description": "We develop projects based on the most advanced technologies and implement approaches to solving problems. Our search research team is ready to help you achieve your project's goal, from discovery to completion.",
+    "allFilter": "All",
+    "learnMore": "Learn more",
+    "noProjects": "No projects found in this category."
+  },
   "footer": {
     "development": "Development",
     "promotion": "Promotion",

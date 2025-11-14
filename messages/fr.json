@@ -97,6 +97,13 @@
     "title": "Stack Technologique",
     "subtitle": "Nous utilisons les dernières technologies avancées, améliorant notre expertise quotidiennement"
   },
+  "cases": {
+    "title": "Portfolio",
+    "description": "Nous développons des projets basés sur les technologies les plus avancées et mettons en œuvre des approches pour résoudre les problèmes. Notre équipe de recherche est prête à vous aider à atteindre l'objectif de votre projet, de la découverte à l'achèvement.",
+    "allFilter": "Tous",
+    "learnMore": "En savoir plus",
+    "noProjects": "Aucun projet trouvé dans cette catégorie."
+  },
   "footer": {
     "development": "Développement",
     "promotion": "Promotion",

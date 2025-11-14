@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-family: 'Roboto', sans-serif;
+  --font-sans: 'Roboto', sans-serif;
+}
 
 :root {
   --background: #ffffff;
@@ -32,14 +38,19 @@
   }
 }
 
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 body {
   background: linear-gradient(180deg, #000810 0%, #010509 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
   min-height: 100vh;
 }
 
 html {
   background: linear-gradient(180deg, #000810 0%, #010509 100%);
+  font-family: 'Roboto', sans-serif;
   min-height: 100vh;
 }
