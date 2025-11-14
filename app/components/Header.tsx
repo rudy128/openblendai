@@ -174,16 +174,17 @@ const Header = () => {
             {locale === 'en' ? 'FR' : 'EN'}
           </Link>
           
+          {/* Social Icons - Hidden on mobile */}
           <Link 
             href="#" 
-            className="text-[#E5E7EB] hover:text-[#4F46E5] transition"
+            className="hidden md:block text-[#E5E7EB] hover:text-[#4F46E5] transition"
             aria-label="YouTube"
           >
             <i className="fab fa-youtube text-lg"></i>
           </Link>
           <Link 
             href="#" 
-            className="text-[#E5E7EB] hover:text-[#4F46E5] transition"
+            className="hidden md:block text-[#E5E7EB] hover:text-[#4F46E5] transition"
             aria-label="LinkedIn"
           >
             <i className="fab fa-linkedin-in text-lg"></i>
