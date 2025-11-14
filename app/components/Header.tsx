@@ -27,7 +27,8 @@ const Header = () => {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
+        <Link href={`/${locale}/`} className="flex items-center">
+                <div className="flex items-center space-x-2">
           {/* Axiomica Logo SVG - More Colorful */}
           <div className="relative">
             <svg 
@@ -77,6 +78,7 @@ const Header = () => {
             Ru
           </Link> */}
         </div>
+        </Link>
         
         {/* Desktop Navigation Links */}
         <div className="hidden lg:flex items-center space-x-8 text-sm font-medium text-[#E5E7EB]">
@@ -201,19 +203,67 @@ const Header = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu (Optional - expandable) */}
+      {/* Mobile Menu (Full Screen Overlay) */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-[#161B22] border-t border-gray-800">
-          <div className="px-4 py-4 space-y-3">
+        <div className="lg:hidden fixed inset-0 z-50 bg-[#000810]">
+          {/* Header Bar with Close Button */}
+          <div className="flex items-center justify-between px-4 py-4 border-b border-gray-800">
+            <div className="flex items-center space-x-2">
+              {/* Logo */}
+              <svg 
+                width="32" 
+                height="32" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                style={{ filter: 'drop-shadow(0 0 8px rgba(99, 102, 241, 0.6))' }}
+              >
+                <path 
+                  d="M12 2L2 7V17L12 22L22 17V7L12 2ZM12 4.49L19.26 8L12 11.51L4.74 8L12 4.49ZM12 19.51L4.74 16V9.49L12 13.01L19.26 9.49V16L12 19.51Z" 
+                  fill="url(#logoGradientMobile)"
+                />
+                <defs>
+                  <linearGradient id="logoGradientMobile" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#8B5CF6" />
+                    <stop offset="50%" stopColor="#6366F1" />
+                    <stop offset="100%" stopColor="#3B82F6" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <span 
+                className="text-xl font-extrabold tracking-wide"
+                style={{
+                  background: 'linear-gradient(135deg, #8B5CF6 0%, #6366F1 50%, #3B82F6 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+              >
+                AXIOMICA
+              </span>
+            </div>
+            
+            {/* Close Button */}
+            <button 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-white hover:text-[#4F46E5] transition-colors"
+              aria-label="Close menu"
+            >
+              <i className="fas fa-times text-2xl"></i>
+            </button>
+          </div>
+
+          {/* Menu Content - Centered */}
+          <div className="flex flex-col items-center justify-center h-[calc(100vh-80px)]  bg-[#000810] px-6 space-y-6">
             {/* Development Submenu */}
-            <div>
+            <div className="w-full max-w-xs">
               <button 
-                className="w-full text-left text-sm font-medium text-[#E5E7EB] hover:text-[#4F46E5] transition py-2 flex items-center justify-between"
+                className="w-full text-left text-lg font-bold text-white hover:text-[#4F46E5] transition py-3 flex items-center justify-between border-b border-gray-800"
                 onClick={() => setIsDevelopmentDropdownOpen(!isDevelopmentDropdownOpen)}
               >
                 <span>{t('development')}</span>
                 <svg 
-                  className={`w-4 h-4 transition-transform ${isDevelopmentDropdownOpen ? 'rotate-180' : ''}`}
+                  className={`w-5 h-5 transition-transform ${isDevelopmentDropdownOpen ? 'rotate-180' : ''}`}
                   fill="none" 
                   stroke="currentColor" 
                   viewBox="0 0 24 24"
@@ -224,56 +274,46 @@ const Header = () => {
               
               {/* Development Dropdown Items */}
               {isDevelopmentDropdownOpen && (
-                <div className="ml-4 mt-2 space-y-2">
+                <div className="ml-4 mt-3 space-y-3">
                   <Link 
                     href={`/${locale}/development/blockchain-development`}
-                    className="block text-sm text-[#9CA3AF] hover:text-[#4F46E5] transition py-2"
+                    className="block text-base text-[#9CA3AF] hover:text-[#4F46E5] transition py-2"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Custom Blockchain
                   </Link>
-                  {/* <Link 
-                    href="#services"
-                    className="block text-sm text-[#9CA3AF] hover:text-[#4F46E5] transition py-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Web Development
-                  </Link>
-                  <Link 
-                    href="#services"
-                    className="block text-sm text-[#9CA3AF] hover:text-[#4F46E5] transition py-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Mobile Development
-                  </Link> */}
                 </div>
               )}
             </div>
 
+            {/* Main Navigation Links */}
             <Link
               href={`/${locale}/cases`}
-              className="block text-sm font-medium text-[#E5E7EB] hover:text-[#4F46E5] transition py-2"
+              className="w-full max-w-xs text-lg font-bold text-white hover:text-[#4F46E5] transition py-3 border-b border-gray-800"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {t('cases')}
             </Link>
+            
             <Link 
               href={`/${locale}/blogs`}
-              className="block text-sm font-medium text-[#E5E7EB] hover:text-[#4F46E5] transition py-2"
+              className="w-full max-w-xs text-lg font-bold text-white hover:text-[#4F46E5] transition py-3 border-b border-gray-800"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {t('blog')}
             </Link>
+            
             <Link 
               href={`/${locale}/about`}
-              className="block text-sm font-medium text-[#E5E7EB] hover:text-[#4F46E5] transition py-2"
+              className="w-full max-w-xs text-lg font-bold text-white hover:text-[#4F46E5] transition py-3 border-b border-gray-800"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {t('aboutUs')}
             </Link>
+            
             <Link 
               href={`/${locale}/contact`}
-              className="block text-sm font-medium text-[#E5E7EB] hover:text-[#4F46E5] transition py-2"
+              className="w-full max-w-xs text-lg font-bold text-white hover:text-[#4F46E5] transition py-3 border-b border-gray-800"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {t('contacts')}
@@ -282,15 +322,33 @@ const Header = () => {
             {/* Language Switcher in Mobile Menu */}
             <Link 
               href={switchLocalePath}
-              className="block text-sm font-semibold text-center px-3 py-2 rounded-full text-white transition-all"
+              className="w-full max-w-xs text-center text-base font-bold px-6 py-4 rounded-full text-white transition-all transform hover:scale-105 mt-6"
               style={{
                 background: 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)',
-                boxShadow: '0 4px 15px rgba(99, 102, 241, 0.3)',
+                boxShadow: '0 8px 25px rgba(99, 102, 241, 0.4)',
               }}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {locale === 'en' ? '🇫🇷 Français' : '🇬🇧 English'}
             </Link>
+
+            {/* Social Icons in Mobile Menu */}
+            <div className="flex items-center gap-6 mt-8">
+              <Link 
+                href="#" 
+                className="text-white hover:text-[#4F46E5] transition"
+                aria-label="YouTube"
+              >
+                <i className="fab fa-youtube text-3xl"></i>
+              </Link>
+              <Link 
+                href="#" 
+                className="text-white hover:text-[#4F46E5] transition"
+                aria-label="LinkedIn"
+              >
+                <i className="fab fa-linkedin-in text-3xl"></i>
+              </Link>
+            </div>
           </div>
         </div>
       )}

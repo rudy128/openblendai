@@ -20,15 +20,20 @@ const MissionSection = () => {
         </div>
 
         {/* Right Visual - Mission Video */}
-        <div className="lg:w-1/2 relative h-96 overflow-hidden rounded-xl bg-white">
+        <div className="w-full lg:w-1/2 relative h-96 overflow-hidden rounded-xl bg-white">
           <video
             className="absolute inset-0 w-full h-full object-cover bg-white"
             autoPlay
             muted
             loop
             playsInline
-            preload="auto"
-            src="/mission_new.mp4"
+            webkit-playsinline="true"
+            preload="metadata"
+            poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            onLoadedMetadata={(e) => {
+              const video = e.target as HTMLVideoElement;
+              video.play().catch(err => console.log('Video autoplay prevented:', err));
+            }}
             onTimeUpdate={(e) => {
               const video = e.target as HTMLVideoElement;
               // Seamless loop - restart slightly before the end to avoid blackout
@@ -43,6 +48,7 @@ const MissionSection = () => {
               video.play();
             }}
           >
+            <source src="/mission_new.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>

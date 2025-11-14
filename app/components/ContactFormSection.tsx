@@ -175,7 +175,7 @@ const ContactFormSection = () => {
           </div>
 
           {/* Right: Phone Mockup (Video Call Style) */}
-          <div className="lg:w-1/2 w-full flex justify-center lg:justify-end relative h-[450px]">
+          <div className="lg:w-1/2 w-full hidden lg:flex justify-center lg:justify-end relative h-[450px]">
             <div className="w-72 h-[450px] bg-gray-900 rounded-[3rem] shadow-2xl relative border-8 border-gray-400 overflow-hidden mockup">
               <div className="flex flex-col h-full text-center p-4">
                 <div className="text-sm text-gray-400 mt-4">AXIOMICA</div>
