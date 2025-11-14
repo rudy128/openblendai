@@ -66,7 +66,8 @@ export const BLOGS_QUERY = `*[_type == "blog"] | order(publishedAt desc) {
   featured
 }`;
 
-export const FEATURED_BLOGS_QUERY = `*[_type == "blog" && featured == true] | order(publishedAt desc)[0...3] {
+// Fetch the single featured blog post
+export const FEATURED_BLOG_QUERY = `*[_type == "blog" && featured == true] | order(publishedAt desc)[0] {
   _id,
   title,
   slug,
@@ -74,6 +75,21 @@ export const FEATURED_BLOGS_QUERY = `*[_type == "blog" && featured == true] | or
   mainImage,
   author,
   category,
+  tags,
+  publishedAt,
+  featured
+}`;
+
+// Fetch all non-featured blog posts
+export const STANDARD_BLOGS_QUERY = `*[_type == "blog" && (featured != true || featured == false)] | order(publishedAt desc) {
+  _id,
+  title,
+  slug,
+  excerpt,
+  mainImage,
+  author,
+  category,
+  tags,
   publishedAt
 }`;
 

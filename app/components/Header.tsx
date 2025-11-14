@@ -90,7 +90,7 @@ const Header = () => {
             {t('cases')}
           </Link>
           <Link 
-            href="#" 
+            href={`/${locale}/blogs`}
             className="hover:text-[#4F46E5] transition"
           >
             {t('blog')}
@@ -181,7 +181,7 @@ const Header = () => {
               {t('cases')}
             </Link>
             <Link 
-              href="#" 
+              href={`/${locale}/blogs`}
               className="block text-sm font-medium text-[#E5E7EB] hover:text-[#4F46E5] transition py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
