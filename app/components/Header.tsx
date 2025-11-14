@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
 
 const Header = () => {
@@ -9,6 +10,13 @@ const Header = () => {
   const [isDevelopmentDropdownOpen, setIsDevelopmentDropdownOpen] = useState(false);
   const t = useTranslations('navigation');
   const locale = useLocale();
+  const pathname = usePathname();
+  
+  // Get the current path without the locale prefix
+  const pathWithoutLocale = pathname.replace(/^\/(en|fr)/, '') || '/';
+  // Build the new path with the opposite locale
+  const newLocale = locale === 'en' ? 'fr' : 'en';
+  const switchLocalePath = `/${newLocale}${pathWithoutLocale}`;
 
   return (
     <header 
@@ -156,7 +164,7 @@ const Header = () => {
         <div className="flex items-center space-x-4">
           {/* Language Switcher */}
           <Link 
-            href={`/${locale === 'en' ? 'fr' : 'en'}`}
+            href={switchLocalePath}
             className="text-xs font-semibold px-3 py-1.5 rounded-full text-white transition-all duration-300 transform hover:scale-105"
             style={{
               background: 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)',
@@ -268,6 +276,19 @@ const Header = () => {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {t('contacts')}
+            </Link>
+            
+            {/* Language Switcher in Mobile Menu */}
+            <Link 
+              href={switchLocalePath}
+              className="block text-sm font-semibold text-center px-3 py-2 rounded-full text-white transition-all"
+              style={{
+                background: 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)',
+                boxShadow: '0 4px 15px rgba(99, 102, 241, 0.3)',
+              }}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {locale === 'en' ? '🇫🇷 Français' : '🇬🇧 English'}
             </Link>
           </div>
         </div>
